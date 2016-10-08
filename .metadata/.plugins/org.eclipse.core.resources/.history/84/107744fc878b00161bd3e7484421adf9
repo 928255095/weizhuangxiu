@@ -1,0 +1,14 @@
+package com.java110.UserLogin;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	Test1 test = new Test1();
+    	System.out.println(test.sayHelloMethod("wuxw"));
+    }
+}

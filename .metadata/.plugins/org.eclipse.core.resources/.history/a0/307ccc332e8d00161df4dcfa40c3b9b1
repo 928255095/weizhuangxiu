@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0    http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.java110.HelloWorld</groupId>
+   <artifactId>helloWorld</artifactId>
+   <version>1.0-SNAPSHOP</version>
+   <packaging>pom</packaging>
+   <name>Maven Hello World Project</name>
+  <modules>
+    <module>../UserLogin</module>
+    <module>../UserRegister</module>
+  </modules>
+  
+  <dependencies>
+  		<dependency>
+			<groupId>spring</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>2.5.6</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>spring</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>2.5.6</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>spring</groupId>
+			<artifactId>spring</artifactId>
+			<version>2.5.6</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.java110.HelloWorld</groupId>
+			<artifactId>UserRegister</artifactId>
+			<version>1.0.1-SNAPSHOP</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		
+
+  </dependencies>
+</project>
