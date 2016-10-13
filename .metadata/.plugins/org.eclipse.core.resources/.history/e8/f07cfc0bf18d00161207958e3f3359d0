@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.java110.bss</groupId>
+  <artifactId>ParentPom</artifactId>
+ <version>0.1</version>
+  <packaging>pom</packaging>
+  
+  <modules>
+    <module>../UserLogin</module>
+    <module>../UserRegister</module>
+    <module>../BssWeb</module>
+  </modules>
+  
+  <properties>
+  	<base.version>0.1</base.version>
+  	<maven.compile.source>1.5</maven.compile.source>
+	<spring.version>2.5.6</spring.version>
+	<maven.compile.target>1.5</maven.compile.target>
+  </properties>
+  
+  <dependencies>
+		<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>servlet-api</artifactId>
+  		<version>2.5</version>
+  		<scope>provided</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>javax.servlet.jsp</groupId>
+  		<artifactId>jsp-api</artifactId>
+  		<version>2.0</version>
+  		<scope>provided</scope>
+  	</dependency>
+  </dependencies>
+    <build>
+  	<resources>
+  		<resource>
+  			<directory>etc</directory>
+  		</resource>
+  	</resources>
+  	
+  	<plugin>
+	    <groupId>org.apache.maven.plugins</groupId>  
+	    <artifactId>maven-eclipse-plugin</artifactId>  
+	    <version>2.8</version>  
+	    <configuration>  
+	        <wtpmanifest>true</wtpmanifest>  
+	        <wtpapplicationxml>true</wtpapplicationxml>  
+	        <wtpversion>2.0</wtpversion>  
+	        <downloadSources>true</downloadSources>  
+	        <downloadJavadocs>true</downloadJavadocs>  
+	    </configuration>  
+	</plugin>  
+  	
+  	<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<configuration>
+						<testFailureIgnore>true</testFailureIgnore>
+					</configuration>
+				</plugin>
+				<!-- 配置site 的国际化，默认为en,fr，更改为zh_CN，以及设置编码格式，默认utf-8 -->
+				<plugin>
+					<artifactId>maven-site-plugin</artifactId>
+					<configuration>
+						<outputEncoding>UTF-8</outputEncoding>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>1.5</source>
+						<target>1.5</target>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.1.1</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+  </build>
+  
+  <distributionManagement>
+		<repository>
+			<id>public_release</id>
+			<url>http://127.0.0.1:8081/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>public_snapshot</id>
+			<url>http://127.0.0.1:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>

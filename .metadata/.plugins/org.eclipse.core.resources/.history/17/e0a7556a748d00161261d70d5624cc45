@@ -1,0 +1,20 @@
+package com.java110.UserLogin;
+
+import java.util.Map;
+
+/**
+ * 用户登录
+ * @author admin
+ *
+ */
+public class LoginCore {
+	
+	public Boolean judgeLogin(Map info){
+		if(info == null ){
+			return false;
+		}
+		String username = info.get("username") == null ? "" : info.get("username").toString();
+		String pwd = info.get("pwd") == null ? "" : info.get("pwd").toString();
+	}
+
+}

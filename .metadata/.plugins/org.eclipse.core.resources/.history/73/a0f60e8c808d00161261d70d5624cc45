@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+  	<groupId>com.java110.bss</groupId>
+    <artifactId>ParentPom</artifactId>
+    <version>${base.version}</version>
+    <relativePath>../ParentPom/pom.xml</relativePath>
+  </parent>
+  
+  <artifactId>BssWeb</artifactId>
+  <version>0.1</version>
+  <name>BssWeb</name>
+  
+  <packaging>war</packaging>
+  
+   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>com.java110.bss</groupId>
+  		<artifactId>UserLogin</artifactId>
+  		<version>1.0.1-SNAPSHOP</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.java110.bss</groupId>
+  		<artifactId>UserRegister</artifactId>
+  		<version>1.0.1-SNAPSHOP</version>
+  	</dependency>
+  </dependencies>
+  
+  <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <version>1.1</version>
+                <configuration>
+                    <path>/wp</path>
+                    <port>8080</port>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <url>http://localhost:8080/manager/html</url>
+                    <server>tomcat6</server>
+                </configuration>
+            </plugin>
+  
+  <build>
+  	<finalName>BssWeb</finalName>
+  	<resources>
+  		<resource>
+  			<directory>src/main/resources</directory>
+  		</resource>
+  	</resources>
+  	<testResources>
+  		<testResource>
+  			<directory>src/test/resources</directory>
+  			<filtering>true</filtering>
+  		</testResource>
+  	</testResources>
+  </build>
+  <distributionManagement>
+		<repository>
+			<id>public_release</id>
+			<url>http://135.192.86.200:8081/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>public_snapshot</id>
+			<url>http://135.192.86.200:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+  
+ </project>

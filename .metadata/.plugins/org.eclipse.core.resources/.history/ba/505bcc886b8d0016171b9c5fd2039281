@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.java110.parent</groupId>
+    <artifactId>ParentPom</artifactId>
+    <version>${base.version}</version>
+    <relativePath>../ParentPom/pom.xml</relativePath>
+  </parent>
+  <artifactId>UserLogin</artifactId>
+  <version>1.0.1-SNAPSHOP</version>
+  <name>UserLogin</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <base.version>0.1</base.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+  	<resources>
+  		<resource>
+  			<directory>etc</directory>
+  		</resource>
+  	</resources>
+  </build>
+  
+  <distributionManagement>
+		<repository>
+			<id>public_release</id>
+			<url>http://135.192.86.200:8081/nexus/content/repositories/public_release</url>
+		</repository>
+		<snapshotRepository>
+			<id>public_snapshot</id>
+			<url>http://135.192.86.200:8081/nexus/content/repositories/public_snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>

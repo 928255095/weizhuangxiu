@@ -1,0 +1,7 @@
+package com.java110.user;
+
+import javax.servlet.http.HttpServlet;
+
+public class UserLogin extends HttpServlet {
+
+}

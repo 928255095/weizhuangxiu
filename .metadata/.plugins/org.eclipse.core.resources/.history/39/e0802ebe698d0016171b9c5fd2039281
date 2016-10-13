@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.java110.parent</groupId>
+  <artifactId>ParentPom</artifactId>
+  <version>${base.version}</version>
+  
+  <modules>
+    <module>../UserLogin</module>
+    <module>../UserRegister</module>
+  </modules>
+  
+  <properties>
+  	<base.version>0.1</base.version>
+  	<maven.compile.source>1.5</maven.compile.source>
+	<spring.version>2.5.6</spring.version>
+	<maven.compile.target>1.5</maven.compile.target>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+  </dependencies>
+    <build>
+  	<resources>
+  		<resource>
+  			<directory>etc</directory>
+  		</resource>
+  	</resources>
+  </build>
+</project>
